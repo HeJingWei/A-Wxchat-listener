@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    tools:ignore="MissingConstraints">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/wechat_is_login"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="44dp"
+        android:checked="false"
+        android:clickable="false"
+        android:text="微信登录"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/service_is_login"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="44dp"
+        android:checked="false"
+        android:clickable="false"
+        android:text="上线"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/wechat_is_login"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/wx_username"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#C6C6C6"
+        app:layout_constraintTop_toBottomOf="@+id/wechat_is_login"
+        />
+
+    <TextView
+        android:id="@+id/wx_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信账号："
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/recyclerview"
+        app:layout_constraintBottom_toTopOf="@+id/go_service"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/go_service"
+        android:text="上线"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/wx_username"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:text="空白二维码"
+        android:id="@+id/empty_qrcode"
+        app:layout_constraintBottom_toBottomOf="@+id/go_service"
+        app:layout_constraintLeft_toRightOf="@+id/go_service"
+        android:layout_marginLeft="8dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:textSize="12sp"
+        android:text="收款二维码"
+        android:visibility="gone"
+        android:id="@+id/collect_qrcode"
+        app:layout_constraintBottom_toBottomOf="@+id/empty_qrcode"
+        app:layout_constraintLeft_toRightOf="@+id/empty_qrcode"
+        android:layout_marginLeft="8dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:textSize="12sp"
+        android:text="收款账单"
+        android:visibility="gone"
+        android:id="@+id/collect_bill"
+        app:layout_constraintBottom_toBottomOf="@+id/collect_qrcode"
+        app:layout_constraintLeft_toRightOf="@+id/collect_qrcode"
+        android:layout_marginLeft="8dp"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
